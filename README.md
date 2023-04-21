@@ -1,2 +1,2 @@
 # HarryKane
-Respository của đồ án môn quản lý dự án nhóm HarryKane
+Respository của đồ án môn Quản Lý Dự Án  nhóm HarryKane
