@@ -202,7 +202,11 @@ public class LoginForm extends javax.swing.JFrame {
     private void btDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDangNhapActionPerformed
         if(txtTenDN.getText().equals("Le Anh Duy") && 
                 txtMatKhau.getText().equals("12345678")) {
-            this.dispose();
+            JOptionPane.showMessageDialog(this, "Đăng nhập thành công!", "Thông báo", JOptionPane.PLAIN_MESSAGE);
+                        hide();
+                        TrangChuNV addframe  = new TrangChuNV();
+                        addframe.main(null);  
+                        this.dispose();
         } else {
             JOptionPane.showMessageDialog(null, "Thông tin đăng nhập không đúng. Xin hãy nhập lại!",
                 "Đăng nhập", JOptionPane.INFORMATION_MESSAGE);
@@ -240,7 +244,10 @@ public class LoginForm extends javax.swing.JFrame {
             txtMatKhau.setEchoChar('\u0000');
         }
     }//GEN-LAST:event_txtMatKhauFocusLost
-
+    
+    public static void main(String[] args) {
+        new LoginForm().setVisible(true);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private QLDA.SWING.RoundJButton btDangNhap;
     private javax.swing.JLabel jLabel1;
