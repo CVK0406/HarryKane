@@ -76,6 +76,11 @@ public class LoginForm extends javax.swing.JFrame {
                 txtTenDNFocusLost(evt);
             }
         });
+        txtTenDN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTenDNActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout roundJPanel1Layout = new javax.swing.GroupLayout(roundJPanel1);
         roundJPanel1.setLayout(roundJPanel1Layout);
@@ -244,6 +249,10 @@ public class LoginForm extends javax.swing.JFrame {
             txtMatKhau.setEchoChar('\u0000');
         }
     }//GEN-LAST:event_txtMatKhauFocusLost
+
+    private void txtTenDNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTenDNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTenDNActionPerformed
     
     public static void main(String[] args) {
         new LoginForm().setVisible(true);
