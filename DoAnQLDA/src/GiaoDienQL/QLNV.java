@@ -41,7 +41,7 @@ public class QLNV extends javax.swing.JFrame {
 
         // Tạo JTable với DefaultTableModel
         DefaultTableModel model = (DefaultTableModel) this.jTable1.getModel();
-        model.addRow(new Object[] {"NV01" , "Trần Quang  Huy", "09/09/1999", "132 Tran Hung Dao street", "abc@gmail.com", 100, "trangquanghuy"});
+        model.addRow(new Object[] {"NV01" , "Trần Quang Huy", "09/09/1999", "132 Tran Hung Dao street", "abc@gmail.com", 100, "trangquanghuy"});
         model.addRow(new Object[] {"NV02", "Nguyễn Quang Linh", "15/07/1998", "Tp.HCM", "quanglinh@gmail.com", 120, "nguyenquanglinh"});
         model.addRow(new Object[] {"NV03", "Nguyễn Anh Trường", "16/05/1998", "Tp.HCM", "anhtruong@gmail.com", 120, "nguyenanhtruong"});
     }
@@ -72,6 +72,11 @@ public class QLNV extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(39, 55, 60));
 
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
         jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTextField1KeyReleased(evt);
@@ -182,6 +187,15 @@ public class QLNV extends javax.swing.JFrame {
     private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
         // TODO add your handling code here:
         String manv_input =  this.jTextField1.getText();
+        String Hoten_input = this.jTextField1.getText();
+        String tk_input = this.jTextField1.getText();
+        Object[][] data = {
+                    
+                };
+                String[] colum = {"Mã nhân viên", "Họ và tên", "Ngày sinh", "Địa chỉ", "Email", "Lương", "Tài khoản"};
+                DefaultTableModel model_new = new DefaultTableModel(data, colum);
+                JTable table_new = new JTable(model_new);
+        
         //DefaultTableModel model = (DefaultTableModel) this.jTable1.getModel();
         if(this.jTextField1.getText().length()==0){
             this.jScrollPane1.setViewportView(null);
@@ -194,13 +208,19 @@ public class QLNV extends javax.swing.JFrame {
         for(int row = 0; row < this.jTable1.getRowCount(); row++)
         {
             String manv = (String) this.jTable1.getValueAt(row, 0);
-            if(manv.equals(manv_input)){
+            String Hoten = (String) this.jTable1.getValueAt(row, 1);
+            String ngaysinh = (String) this.jTable1.getValueAt(row, 2);
+            String diachi = (String) this.jTable1.getValueAt(row, 3);
+            String email = (String) this.jTable1.getValueAt(row, 4);
+            Integer luong = (Integer) this.jTable1.getValueAt(row, 5);
+            String taikhoan = (String) this.jTable1.getValueAt(row, 6);
+            if(manv.contains(manv_input) || Hoten.contains(Hoten_input) || taikhoan.contains(tk_input)){
                 String hoten = (String) this.jTable1.getValueAt(row, 1);
-                String ngaysinh = (String) this.jTable1.getValueAt(row, 2);
-                String diachi = (String) this.jTable1.getValueAt(row, 3);
-                String email = (String) this.jTable1.getValueAt(row, 4);
-                Integer luong = (Integer) this.jTable1.getValueAt(row, 5);
-                String taikhoan = (String) this.jTable1.getValueAt(row, 6);
+                //String ngaysinh = (String) this.jTable1.getValueAt(row, 2);
+                //String diachi = (String) this.jTable1.getValueAt(row, 3);
+                //String email = (String) this.jTable1.getValueAt(row, 4);
+                //Integer luong = (Integer) this.jTable1.getValueAt(row, 5);
+                //String taikhoan = (String) this.jTable1.getValueAt(row, 6);
                 /*int Luong = 0;
                         try {
                             Luong = Integer.parseInt(luong);
@@ -215,19 +235,28 @@ public class QLNV extends javax.swing.JFrame {
                 this.jScrollPane1.revalidate();
                 this.jScrollPane1.repaint();
                 //Tạo jtable mới
-                Object[][] data = {
-                  {manv , hoten, ngaysinh, diachi, email, luong, taikhoan}  
-                };
-                String[] colum = {"Mã nhân viên", "Họ và tên", "Ngày sinh", "Địa chỉ", "Email", "Lương", "Tài khoản"};
-                DefaultTableModel model_new = new DefaultTableModel(data, colum);
-                JTable table_new = new JTable(model_new);
-                this.jScrollPane1.setViewportView(table_new);
-                this.jScrollPane1.revalidate();
-                this.jScrollPane1.repaint();
+                //Object[][] data = {
+                 // {manv , hoten, ngaysinh, diachi, email, luong, taikhoan}  
+                //};
+                //String[] colum = {"Mã nhân viên", "Họ và tên", "Ngày sinh", "Địa chỉ", "Email", "Lương", "Tài khoản"};
+                //DefaultTableModel model_new = new DefaultTableModel(data, colum);
+                //JTable table_new = new JTable(model_new);
+                model_new.addRow(new Object[] {manv , Hoten, ngaysinh, diachi, email, luong, taikhoan});
+                //this.jScrollPane1.setViewportView(table_new);
+                //this.jScrollPane1.revalidate();
+                //this.jScrollPane1.repaint();
             }           
         }
+            this.jScrollPane1.setViewportView(table_new);
+                this.jScrollPane1.revalidate();
+                this.jScrollPane1.repaint();
+        
         }
     }//GEN-LAST:event_jTextField1KeyReleased
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
