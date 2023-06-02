@@ -20,6 +20,7 @@ public class TrangChuNV extends javax.swing.JFrame {
      * Creates new form TrangChuNV
      */
     public TrangChuNV() {
+        this.setUndecorated(true);
         hopdong = new HopDongNV();
         hsnv = new HoSoNV();
         chamcong = new ChamCongNV();
@@ -187,7 +188,7 @@ public class TrangChuNV extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
                             .addComponent(jLabel5))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 9, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -216,7 +217,7 @@ public class TrangChuNV extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );

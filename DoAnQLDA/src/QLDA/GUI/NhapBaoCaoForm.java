@@ -3,6 +3,7 @@ package QLDA.GUI;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JOptionPane;
 
 
 public class NhapBaoCaoForm extends javax.swing.JFrame {
@@ -144,9 +145,13 @@ public class NhapBaoCaoForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btHuyActionPerformed
 
     private void btXacNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btXacNhanActionPerformed
-  
+        JOptionPane.showMessageDialog(this, "Đăng thông báo thành công!", "Thông báo", JOptionPane.PLAIN_MESSAGE); 
+        this.dispose();
     }//GEN-LAST:event_btXacNhanActionPerformed
-
+    
+    public static void main(String[] args) {
+        new NhapBaoCaoForm().setVisible(true);
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

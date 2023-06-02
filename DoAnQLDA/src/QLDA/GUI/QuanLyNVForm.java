@@ -1,12 +1,14 @@
 package QLDA.GUI;
 
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 
 public class QuanLyNVForm extends javax.swing.JFrame {
     
     private ThemNVForm tnv;
+    private SuaNVForm snv;
 
     public QuanLyNVForm() {
         initComponents();
@@ -84,6 +86,11 @@ public class QuanLyNVForm extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tbQuanLyNV);
 
         txtTimKiem.setPlaceholder("Tìm kiếm");
+        txtTimKiem.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtTimKiemKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout roundJPanel1Layout = new javax.swing.GroupLayout(roundJPanel1);
         roundJPanel1.setLayout(roundJPanel1Layout);
@@ -104,6 +111,11 @@ public class QuanLyNVForm extends javax.swing.JFrame {
 
         roundJButton21.setText("Sửa thông tin");
         roundJButton21.setRadius(30);
+        roundJButton21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                roundJButton21ActionPerformed(evt);
+            }
+        });
 
         roundJButton22.setText("Thêm nhân viên");
         roundJButton22.setRadius(30);
@@ -173,6 +185,11 @@ public class QuanLyNVForm extends javax.swing.JFrame {
         tnv.setVisible(true);
     }//GEN-LAST:event_roundJButton22ActionPerformed
 
+    public JTable get_table()
+    {
+        return this.tbQuanLyNV;
+    }
+    
     private void roundJButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roundJButton23ActionPerformed
         int index = tbQuanLyNV.getSelectedRow();
         if (index >= 0) {
@@ -185,6 +202,94 @@ public class QuanLyNVForm extends javax.swing.JFrame {
         
     }//GEN-LAST:event_roundJButton23ActionPerformed
 
+    private void txtTimKiemKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimKiemKeyReleased
+        // TODO add your handling code here:
+        String manv_input =  this.txtTimKiem.getText();
+        String Hoten_input = this.txtTimKiem.getText();
+        String tk_input = this.txtTimKiem.getText();
+        Object[][] data = {
+                    
+                };
+                String[] colum = {"Mã nhân viên", "Họ và tên", "Ngày sinh", "Địa chỉ", "Email", "Lương", "Vị trí"};
+                DefaultTableModel model_new = new DefaultTableModel(data, colum);
+                JTable table_new = new JTable(model_new);
+        
+        //DefaultTableModel model = (DefaultTableModel) this.jTable1.getModel();
+        if(this.txtTimKiem.getText().length()==0){
+            this.jScrollPane1.setViewportView(null);
+                this.jScrollPane1.revalidate();
+                this.jScrollPane1.repaint();
+                this.jScrollPane1.setViewportView(this.tbQuanLyNV);
+                this.jScrollPane1.revalidate();
+                this.jScrollPane1.repaint();
+        }else{
+        for(int row = 0; row < this.tbQuanLyNV.getRowCount(); row++)
+        {
+            String manv = (String) this.tbQuanLyNV.getValueAt(row, 0);
+            String Hoten = (String) this.tbQuanLyNV.getValueAt(row, 1);
+            String ngaysinh = (String) this.tbQuanLyNV.getValueAt(row, 2);
+            String diachi = (String) this.tbQuanLyNV.getValueAt(row, 3);
+            String email = (String) this.tbQuanLyNV.getValueAt(row, 4);
+            String luong = (String) this.tbQuanLyNV.getValueAt(row, 5);
+            String taikhoan = (String) this.tbQuanLyNV.getValueAt(row, 6);
+            if(manv.contains(manv_input) || Hoten.contains(Hoten_input) || taikhoan.contains(tk_input)){
+                String hoten = (String) this.tbQuanLyNV.getValueAt(row, 1);
+                //String ngaysinh = (String) this.jTable1.getValueAt(row, 2);
+                //String diachi = (String) this.jTable1.getValueAt(row, 3);
+                //String email = (String) this.jTable1.getValueAt(row, 4);
+                //Integer luong = (Integer) this.jTable1.getValueAt(row, 5);
+                //String taikhoan = (String) this.jTable1.getValueAt(row, 6);
+                /*int Luong = 0;
+                        try {
+                            Luong = Integer.parseInt(luong);
+                        } catch (NumberFormatException e) {
+                             // Xử lý lỗi khi không thể chuyển đổi thành số nguyên
+                             e.printStackTrace();
+                        }*/
+                //Xóa các components trong ScrollPane
+                //Container content = (Container) this.jScrollPane1.getViewport().getView();
+                //content.removeAll();
+                this.jScrollPane1.setViewportView(null);
+                this.jScrollPane1.revalidate();
+                this.jScrollPane1.repaint();
+                //Tạo jtable mới
+                //Object[][] data = {
+                 // {manv , hoten, ngaysinh, diachi, email, luong, taikhoan}  
+                //};
+                //String[] colum = {"Mã nhân viên", "Họ và tên", "Ngày sinh", "Địa chỉ", "Email", "Lương", "Tài khoản"};
+                //DefaultTableModel model_new = new DefaultTableModel(data, colum);
+                //JTable table_new = new JTable(model_new);
+                model_new.addRow(new Object[] {manv , Hoten, ngaysinh, diachi, email, luong, taikhoan});
+                //this.jScrollPane1.setViewportView(table_new);
+                //this.jScrollPane1.revalidate();
+                //this.jScrollPane1.repaint();
+            }           
+        }
+            this.jScrollPane1.setViewportView(table_new);
+                this.jScrollPane1.revalidate();
+                this.jScrollPane1.repaint();
+        
+        }
+    }//GEN-LAST:event_txtTimKiemKeyReleased
+
+    private void roundJButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roundJButton21ActionPerformed
+        // TODO add your handling code here:
+        int selecrow = this.tbQuanLyNV.getSelectedRow();
+        if(selecrow >= 0){
+            String mnv = (String) tbQuanLyNV.getValueAt(selecrow, 0);
+            String hoten = (String) tbQuanLyNV.getValueAt(selecrow, 1);
+            String ngaysinh = (String) tbQuanLyNV.getValueAt(selecrow, 2);
+            String diachi = (String) tbQuanLyNV.getValueAt(selecrow, 3);
+            String email = (String) tbQuanLyNV.getValueAt(selecrow, 4);
+            String luong = (String) tbQuanLyNV.getValueAt(selecrow, 5);
+            String vitri = (String) tbQuanLyNV.getValueAt(selecrow, 6);
+        }
+        snv = new SuaNVForm(this);
+        snv.setVisible(true);
+    }//GEN-LAST:event_roundJButton21ActionPerformed
+    public static void main(String[] args) {
+        new QuanLyNVForm().setVisible(true);
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -197,4 +302,8 @@ public class QuanLyNVForm extends javax.swing.JFrame {
     private static QLDA.SWING.CustomTable tbQuanLyNV;
     private QLDA.SWING.PlaceholderText txtTimKiem;
     // End of variables declaration//GEN-END:variables
+
+    Object get_table_obj() {
+        return this.tbQuanLyNV;
+    }
 }

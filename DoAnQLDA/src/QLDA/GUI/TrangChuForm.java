@@ -243,7 +243,9 @@ public class TrangChuForm extends javax.swing.JFrame {
 //        htb.setVisible(true);
     }//GEN-LAST:event_tbThongBaoSNMousePressed
 
-
+    public static void main(String[] args) {
+        new TrangChuForm().setVisible(true);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private QLDA.SWING.RoundJButton btChamCong;
