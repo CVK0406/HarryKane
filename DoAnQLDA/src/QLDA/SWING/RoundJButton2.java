@@ -8,7 +8,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 
-public class RoundJButton extends JButton {
+public class RoundJButton2 extends JButton {
 
     public boolean isOver() {
         return over;
@@ -43,6 +43,14 @@ public class RoundJButton extends JButton {
         this.colorClick = colorClick;
     }
 
+    public Color getBorderColor() {
+        return borderColor;
+    }
+
+    public void setBorderColor(Color borderColor) {
+        this.borderColor = borderColor;
+    }
+
     public int getRadius() {
         return radius;
     }
@@ -51,29 +59,32 @@ public class RoundJButton extends JButton {
         this.radius = radius;
     }
 
-    public RoundJButton() {
+    public RoundJButton2() {
         //  Init Color
 
-        setColor(new Color(157, 178, 191));
-        colorOver = new Color(221, 230, 237);
-        colorClick = new Color(157, 178, 191);
+        setColor(new Color(39, 55, 77));
+        colorOver = new Color(157, 178, 191);
+        colorClick = new Color(157, 178, 191, 200);
+        borderColor = new Color(221, 230, 237);
         setContentAreaFilled(false);
         setFocusable(false);
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         setFont(new java.awt.Font("Segoe UI", 1, 16));
-        setForeground(new java.awt.Color(39, 55, 77));
+        setForeground(new java.awt.Color(221, 230, 237));
         setBorder(null);
         //  Add event mouse
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent me) {
                 setBackground(colorOver);
+                setForeground(new java.awt.Color(39, 55, 77));
                 over = true;
             }
 
             @Override
             public void mouseExited(MouseEvent me) {
                 setBackground(color);
+                setForeground(new java.awt.Color(221, 230, 237));
                 over = false;
 
             }
@@ -98,15 +109,19 @@ public class RoundJButton extends JButton {
     private Color color;
     private Color colorOver;
     private Color colorClick;
+    private Color borderColor;
     private int radius = 0;
 
     @Override
     protected void paintComponent(Graphics grphcs) {
         Graphics2D g2 = (Graphics2D) grphcs;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        //  Paint Border
+        g2.setColor(borderColor);
+        g2.fillRoundRect(0, 0, getWidth(), getHeight(), radius, radius);
         g2.setColor(getBackground());
         //  Border set 2 Pix
-        g2.fillRoundRect(1, 1, getWidth() - 2, getHeight() - 2, radius, radius);
+        g2.fillRoundRect(1, 1, (int) (getWidth() - 1.8), (int) (getHeight() - 2), radius, radius);
         super.paintComponent(grphcs);
     }
 }
