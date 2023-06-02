@@ -13,6 +13,7 @@ public class TrangChuForm extends javax.swing.JFrame {
     private HienThongBaoForm htb;
 
     public TrangChuForm() {
+        ql = new QuanLyNVForm();
         initComponents();
         hs = new HoSoForm();
         showWindow(hs);
@@ -229,7 +230,7 @@ public class TrangChuForm extends javax.swing.JFrame {
 
     private void btQuanLyNVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btQuanLyNVActionPerformed
         btQuanLyNV.setBackground(new Color(221, 230, 237));
-        ql = new QuanLyNVForm();
+        
         showWindow(ql);
     }//GEN-LAST:event_btQuanLyNVActionPerformed
 

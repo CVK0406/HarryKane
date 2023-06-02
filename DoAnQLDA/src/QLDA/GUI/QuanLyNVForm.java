@@ -1,5 +1,6 @@
 package QLDA.GUI;
 
+import QLDA.SWING.CustomTable;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -9,9 +10,12 @@ public class QuanLyNVForm extends javax.swing.JFrame {
     
     private ThemNVForm tnv;
     private SuaNVForm snv;
+    private int flat = 0;
+    private CustomTable table_new;
 
     public QuanLyNVForm() {
         initComponents();
+        table_new = new CustomTable();
         AddRowTable(new Object[]{
             "NV1", "Lê Thuận Hiếu", "03/06/2003", "133 Đường Trần Hưng đạo, TP. Long Xuyen",
             "abc@gmail.com", "2000$", "Quản lý"
@@ -187,6 +191,7 @@ public class QuanLyNVForm extends javax.swing.JFrame {
 
     public JTable get_table()
     {
+        if(flat==1) return this.table_new;
         return this.tbQuanLyNV;
     }
     
@@ -212,10 +217,12 @@ public class QuanLyNVForm extends javax.swing.JFrame {
                 };
                 String[] colum = {"Mã nhân viên", "Họ và tên", "Ngày sinh", "Địa chỉ", "Email", "Lương", "Vị trí"};
                 DefaultTableModel model_new = new DefaultTableModel(data, colum);
-                JTable table_new = new JTable(model_new);
+                //CustomTable table_new = new CustomTable();
+                table_new.setModel(model_new);
         
         //DefaultTableModel model = (DefaultTableModel) this.jTable1.getModel();
         if(this.txtTimKiem.getText().length()==0){
+            this.flat = 0;
             this.jScrollPane1.setViewportView(null);
                 this.jScrollPane1.revalidate();
                 this.jScrollPane1.repaint();
@@ -265,6 +272,7 @@ public class QuanLyNVForm extends javax.swing.JFrame {
                 //this.jScrollPane1.repaint();
             }           
         }
+        this.flat = 1;
             this.jScrollPane1.setViewportView(table_new);
                 this.jScrollPane1.revalidate();
                 this.jScrollPane1.repaint();
