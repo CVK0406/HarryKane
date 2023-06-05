@@ -8,6 +8,9 @@
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
+  <Events>
+    <EventHandler event="windowGainedFocus" listener="java.awt.event.WindowFocusListener" parameters="java.awt.event.WindowEvent" handler="formWindowGainedFocus"/>
+  </Events>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -46,11 +49,11 @@
               <Component id="jScrollPane1" alignment="1" pref="1057" max="32767" attributes="0"/>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="roundJButton22" min="-2" pref="144" max="-2" attributes="0"/>
+                  <Component id="btThemNV" min="-2" pref="144" max="-2" attributes="0"/>
                   <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                  <Component id="roundJButton23" min="-2" pref="124" max="-2" attributes="0"/>
+                  <Component id="btXoaNV" min="-2" pref="124" max="-2" attributes="0"/>
                   <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                  <Component id="roundJButton21" min="-2" pref="120" max="-2" attributes="0"/>
+                  <Component id="btSuaThongTin" min="-2" pref="120" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
@@ -69,9 +72,9 @@
                   <Component id="jScrollPane1" min="-2" pref="480" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="roundJButton21" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
-                      <Component id="roundJButton22" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
-                      <Component id="roundJButton23" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                      <Component id="btSuaThongTin" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                      <Component id="btThemNV" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                      <Component id="btXoaNV" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
               </Group>
@@ -145,9 +148,12 @@
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tbQuanLyNVMouseClicked"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="tbQuanLyNV.fixTable(jScrollPane1);"/>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
               </AuxValues>
             </Component>
           </SubComponents>
@@ -176,40 +182,37 @@
           </Layout>
           <SubComponents>
             <Component class="QLDA.SWING.PlaceholderText" name="txtTimKiem">
-              <Events>
-                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTimKiemKeyReleased"/>
-              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="txtTimKiem.setPlaceholder(&quot;T&#xec;m ki&#x1ebf;m&quot;);"/>
               </AuxValues>
             </Component>
           </SubComponents>
         </Container>
-        <Component class="QLDA.SWING.RoundJButton2" name="roundJButton21">
+        <Component class="QLDA.SWING.RoundJButton2" name="btSuaThongTin">
           <Properties>
             <Property name="text" type="java.lang.String" value="S&#x1eed;a th&#xf4;ng tin"/>
             <Property name="radius" type="int" value="30"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="roundJButton21ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btSuaThongTinActionPerformed"/>
           </Events>
         </Component>
-        <Component class="QLDA.SWING.RoundJButton2" name="roundJButton22">
+        <Component class="QLDA.SWING.RoundJButton2" name="btThemNV">
           <Properties>
             <Property name="text" type="java.lang.String" value="Th&#xea;m nh&#xe2;n vi&#xea;n"/>
             <Property name="radius" type="int" value="30"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="roundJButton22ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btThemNVActionPerformed"/>
           </Events>
         </Component>
-        <Component class="QLDA.SWING.RoundJButton2" name="roundJButton23">
+        <Component class="QLDA.SWING.RoundJButton2" name="btXoaNV">
           <Properties>
             <Property name="text" type="java.lang.String" value="X&#xf3;a nh&#xe2;n vi&#xea;n"/>
             <Property name="radius" type="int" value="30"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="roundJButton23ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btXoaNVActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

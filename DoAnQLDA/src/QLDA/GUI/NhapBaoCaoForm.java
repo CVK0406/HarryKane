@@ -3,7 +3,6 @@ package QLDA.GUI;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import javax.swing.JOptionPane;
 
 
 public class NhapBaoCaoForm extends javax.swing.JFrame {
@@ -23,7 +22,7 @@ public class NhapBaoCaoForm extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtThongBao = new javax.swing.JTextArea();
+        txtNhapTB = new javax.swing.JTextArea();
         btXacNhan = new QLDA.SWING.RoundJButton();
         btHuy = new QLDA.SWING.RoundJButton2();
 
@@ -40,12 +39,12 @@ public class NhapBaoCaoForm extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(39, 55, 77));
         jLabel2.setText("Nhập nội dung thông báo");
 
-        txtThongBao.setColumns(20);
-        txtThongBao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtThongBao.setForeground(new java.awt.Color(39, 55, 77));
-        txtThongBao.setRows(5);
-        txtThongBao.setBorder(null);
-        jScrollPane1.setViewportView(txtThongBao);
+        txtNhapTB.setColumns(20);
+        txtNhapTB.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        txtNhapTB.setForeground(new java.awt.Color(39, 55, 77));
+        txtNhapTB.setRows(5);
+        txtNhapTB.setBorder(null);
+        jScrollPane1.setViewportView(txtNhapTB);
 
         btXacNhan.setText("Xác nhận");
         btXacNhan.setRadius(30);
@@ -145,13 +144,11 @@ public class NhapBaoCaoForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btHuyActionPerformed
 
     private void btXacNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btXacNhanActionPerformed
-        JOptionPane.showMessageDialog(this, "Đăng thông báo thành công!", "Thông báo", JOptionPane.PLAIN_MESSAGE); 
+        HienThongBaoForm.txtHienTB.setText(txtNhapTB.getText());
+        txtNhapTB.setText("");
         this.dispose();
     }//GEN-LAST:event_btXacNhanActionPerformed
-    
-    public static void main(String[] args) {
-        new NhapBaoCaoForm().setVisible(true);
-    }
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -161,6 +158,6 @@ public class NhapBaoCaoForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea txtThongBao;
+    private javax.swing.JTextArea txtNhapTB;
     // End of variables declaration//GEN-END:variables
 }

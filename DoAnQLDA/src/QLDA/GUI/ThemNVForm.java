@@ -1,6 +1,7 @@
 package QLDA.GUI;
 
-import java.awt.Color;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 
 
 public class ThemNVForm extends javax.swing.JFrame {
@@ -11,7 +12,33 @@ public class ThemNVForm extends javax.swing.JFrame {
         initComponents();
     }
 
-
+    public static void setText(JTable tb) {
+        int index = tb.getSelectedRow();
+        if (index < tb.getRowCount() && index >= 0) {
+            txtMaNV.setText(tb.getValueAt(index, 0).toString());
+            txtHoTen.setText(tb.getValueAt(index, 1).toString());
+            txtNgaySinh.setText(tb.getValueAt(index, 2).toString());
+            txtDiaChi.setText(tb.getValueAt(index, 3).toString());
+            txtEmail.setText(tb.getValueAt(index, 4).toString());
+            txtLuong.setText(tb.getValueAt(index, 5).toString());
+            txtViTri.setText(tb.getValueAt(index, 6).toString());
+            
+            txtMaNV.setEditable(false);
+        }
+    }
+    
+    public static void editInfo(JTable tb) {
+        int index = tb.getSelectedRow();
+        if (index >= 0) {
+            tb.setValueAt(txtHoTen.getText(), index, 1);
+            tb.setValueAt(txtNgaySinh.getText(), index, 2);
+            tb.setValueAt(txtDiaChi.getText(), index, 3);
+            tb.setValueAt(txtEmail.getText(), index, 4);
+            tb.setValueAt(txtLuong.getText(), index, 5);
+            tb.setValueAt(txtViTri.getText(), index, 6);
+            JOptionPane.showMessageDialog(null, "Sửa thành công.", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -35,6 +62,7 @@ public class ThemNVForm extends javax.swing.JFrame {
         txtViTri = new QLDA.SWING.PlaceholderText();
         roundJPanel9 = new QLDA.SWING.RoundJPanel();
         txtLuong = new QLDA.SWING.PlaceholderText();
+        btSua = new QLDA.SWING.RoundJButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -199,6 +227,14 @@ public class ThemNVForm extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        btSua.setText("Sửa");
+        btSua.setRadius(30);
+        btSua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSuaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -211,6 +247,8 @@ public class ThemNVForm extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btSua, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(btHuy, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btThem, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -255,7 +293,8 @@ public class ThemNVForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btHuy, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btThem, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btThem, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btSua, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(48, 48, 48))
         );
 
@@ -296,10 +335,16 @@ public class ThemNVForm extends javax.swing.JFrame {
         QuanLyNVForm.AddRowTable(row);
     }//GEN-LAST:event_btThemActionPerformed
 
+    private void btSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSuaActionPerformed
+        editInfo(QuanLyNVForm.getTable());
+        this.dispose();
+    }//GEN-LAST:event_btSuaActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private QLDA.SWING.RoundJButton2 btHuy;
+    private QLDA.SWING.RoundJButton btSua;
     private QLDA.SWING.RoundJButton btThem;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
@@ -310,12 +355,12 @@ public class ThemNVForm extends javax.swing.JFrame {
     private QLDA.SWING.RoundJPanel roundJPanel7;
     private QLDA.SWING.RoundJPanel roundJPanel8;
     private QLDA.SWING.RoundJPanel roundJPanel9;
-    private QLDA.SWING.PlaceholderText txtDiaChi;
-    private QLDA.SWING.PlaceholderText txtEmail;
-    private QLDA.SWING.PlaceholderText txtHoTen;
-    private QLDA.SWING.PlaceholderText txtLuong;
-    private QLDA.SWING.PlaceholderText txtMaNV;
-    private QLDA.SWING.PlaceholderText txtNgaySinh;
-    private QLDA.SWING.PlaceholderText txtViTri;
+    private static QLDA.SWING.PlaceholderText txtDiaChi;
+    private static QLDA.SWING.PlaceholderText txtEmail;
+    private static QLDA.SWING.PlaceholderText txtHoTen;
+    private static QLDA.SWING.PlaceholderText txtLuong;
+    private static QLDA.SWING.PlaceholderText txtMaNV;
+    private static QLDA.SWING.PlaceholderText txtNgaySinh;
+    private static QLDA.SWING.PlaceholderText txtViTri;
     // End of variables declaration//GEN-END:variables
 }

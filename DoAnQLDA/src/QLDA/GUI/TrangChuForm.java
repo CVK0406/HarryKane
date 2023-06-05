@@ -8,12 +8,12 @@ public class TrangChuForm extends javax.swing.JFrame {
     
     private LoginForm lg;
     private HoSoForm hs;
-    private QuanLyNVForm ql;
-    private NhapBaoCaoForm nbc;
-    private HienThongBaoForm htb;
+    private QuanLyNVForm ql = new QuanLyNVForm();
+    private NhapBaoCaoForm nbc = new NhapBaoCaoForm();
+    private HienThongBaoForm htb = new HienThongBaoForm();
+    private ChamCongForm cc = new ChamCongForm();
 
     public TrangChuForm() {
-        ql = new QuanLyNVForm();
         initComponents();
         hs = new HoSoForm();
         showWindow(hs);
@@ -42,6 +42,8 @@ public class TrangChuForm extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         lbThongBao = new javax.swing.JLabel();
         tbThongBaoSN = new javax.swing.JLabel();
+        customAvatar1 = new QLDA.SWING.CustomAvatar();
+        jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,6 +66,11 @@ public class TrangChuForm extends javax.swing.JFrame {
 
         btChamCong.setText("Chấm công");
         btChamCong.setRadius(20);
+        btChamCong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btChamCongActionPerformed(evt);
+            }
+        });
 
         btQuanLyNV.setText("Quản lý NV");
         btQuanLyNV.setRadius(20);
@@ -154,16 +161,26 @@ public class TrangChuForm extends javax.swing.JFrame {
             }
         });
 
+        customAvatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QLDA/GUI/avatar-1.jpg"))); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("<html>Lê Thuận<br/>Hiếu</html>");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(711, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbThongBao, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(tbThongBaoSN, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(258, 258, 258))
+                .addGap(40, 40, 40)
+                .addComponent(customAvatar1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,6 +190,12 @@ public class TrangChuForm extends javax.swing.JFrame {
                     .addComponent(lbThongBao, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tbThongBaoSN, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(26, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(customAvatar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
+                .addGap(14, 14, 14))
         );
 
         jPanel3.setBackground(new java.awt.Color(39, 55, 77));
@@ -181,11 +204,11 @@ public class TrangChuForm extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1057, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 620, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -230,30 +253,31 @@ public class TrangChuForm extends javax.swing.JFrame {
 
     private void btQuanLyNVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btQuanLyNVActionPerformed
         btQuanLyNV.setBackground(new Color(221, 230, 237));
-        
         showWindow(ql);
     }//GEN-LAST:event_btQuanLyNVActionPerformed
 
     private void lbThongBaoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbThongBaoMousePressed
-        nbc = new NhapBaoCaoForm();
         nbc.setVisible(true);
     }//GEN-LAST:event_lbThongBaoMousePressed
 
     private void tbThongBaoSNMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbThongBaoSNMousePressed
-//        htb = new HienThongBaoForm();
-//        htb.setVisible(true);
+        htb.setVisible(true);
     }//GEN-LAST:event_tbThongBaoSNMousePressed
 
-    public static void main(String[] args) {
-        new TrangChuForm().setVisible(true);
-    }
+    private void btChamCongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btChamCongActionPerformed
+        showWindow(cc);
+    }//GEN-LAST:event_btChamCongActionPerformed
+
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private QLDA.SWING.RoundJButton btChamCong;
     private QLDA.SWING.RoundJButton btHoSo;
     private QLDA.SWING.RoundJButton btHopDong;
     private QLDA.SWING.RoundJButton btQuanLyNV;
+    private QLDA.SWING.CustomAvatar customAvatar1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
