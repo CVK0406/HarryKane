@@ -53,6 +53,8 @@
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
+                          <Component id="btSua" min="-2" pref="100" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btHuy" min="-2" pref="100" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btThem" min="-2" pref="100" max="-2" attributes="0"/>
@@ -111,6 +113,7 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btHuy" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="btThem" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="btSua" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
               </Group>
@@ -162,6 +165,7 @@
             <Component class="QLDA.SWING.PlaceholderText" name="txtMaNV">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="txtMaNV.setPlaceholder(&quot;M&#xe3; nh&#xe2;n vi&#xea;n&quot;);"/>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
               </AuxValues>
             </Component>
           </SubComponents>
@@ -203,6 +207,7 @@
             <Component class="QLDA.SWING.PlaceholderText" name="txtHoTen">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="txtHoTen.setPlaceholder(&quot;H&#x1ecd; v&#xe0; t&#xea;n&quot;);"/>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
               </AuxValues>
             </Component>
           </SubComponents>
@@ -233,6 +238,7 @@
             <Component class="QLDA.SWING.PlaceholderText" name="txtNgaySinh">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="txtNgaySinh.setPlaceholder(&quot;Ng&#xe0;y sinh&quot;);"/>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
               </AuxValues>
             </Component>
           </SubComponents>
@@ -266,6 +272,7 @@
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="txtEmail.setPlaceholder(&quot;Email&quot;);"/>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
               </AuxValues>
             </Component>
           </SubComponents>
@@ -296,6 +303,7 @@
             <Component class="QLDA.SWING.PlaceholderText" name="txtDiaChi">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="txtDiaChi.setPlaceholder(&quot;&#x110;&#x1ecb;a ch&#x1ec9;&quot;);"/>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
               </AuxValues>
             </Component>
           </SubComponents>
@@ -326,6 +334,7 @@
             <Component class="QLDA.SWING.PlaceholderText" name="txtViTri">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="txtViTri.setPlaceholder(&quot;V&#x1ecb; tr&#xed;&quot;);"/>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
               </AuxValues>
             </Component>
           </SubComponents>
@@ -356,10 +365,20 @@
             <Component class="QLDA.SWING.PlaceholderText" name="txtLuong">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="txtLuong.setPlaceholder(&quot;L&#x1b0;&#x1a1;ng&quot;);"/>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
               </AuxValues>
             </Component>
           </SubComponents>
         </Container>
+        <Component class="QLDA.SWING.RoundJButton" name="btSua">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
+            <Property name="radius" type="int" value="30"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btSuaActionPerformed"/>
+          </Events>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>
