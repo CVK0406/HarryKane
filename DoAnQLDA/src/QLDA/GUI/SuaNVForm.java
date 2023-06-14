@@ -1,6 +1,5 @@
 package QLDA.GUI;
 
-import java.awt.Color;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -15,15 +14,15 @@ public class SuaNVForm extends javax.swing.JFrame {
     public SuaNVForm(QuanLyNVForm frame) {
         initComponents();
         this.ql = frame;
-        int selecrow = this.ql.get_table().getSelectedRow();
+        int selecrow = QuanLyNVForm.getTable().getSelectedRow();
         if(selecrow >= 0){
-            String mnv = (String) this.ql.get_table().getValueAt(selecrow, 0);
-            String hoten = (String) this.ql.get_table().getValueAt(selecrow, 1);
-            String ngaysinh = (String) this.ql.get_table().getValueAt(selecrow, 2);
-            String diachi = (String) this.ql.get_table().getValueAt(selecrow, 3);
-            String email = (String) this.ql.get_table().getValueAt(selecrow, 4);
-            String luong = (String) this.ql.get_table().getValueAt(selecrow, 5);
-            String vitri = (String) this.ql.get_table().getValueAt(selecrow, 6);
+            String mnv = (String) QuanLyNVForm.getTable().getValueAt(selecrow, 0);
+            String hoten = (String) QuanLyNVForm.getTable().getValueAt(selecrow, 1);
+            String ngaysinh = (String) QuanLyNVForm.getTable().getValueAt(selecrow, 2);
+            String diachi = (String) QuanLyNVForm.getTable().getValueAt(selecrow, 3);
+            String email = (String) QuanLyNVForm.getTable().getValueAt(selecrow, 4);
+            String luong = (String) QuanLyNVForm.getTable().getValueAt(selecrow, 5);
+            String vitri = (String) QuanLyNVForm.getTable().getValueAt(selecrow, 6);
             this.txtDiaChi.setText(diachi);
             this.txtEmail.setText(email);
             this.txtHoTen.setText(hoten);
@@ -305,10 +304,10 @@ public class SuaNVForm extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEmailActionPerformed
 
     private void btThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btThemActionPerformed
-        int selecrow = this.ql.get_table().getSelectedRow();
+        int selecrow = QuanLyNVForm.getTable().getSelectedRow();
         if(selecrow >= 0){
             
-            DefaultTableModel model = (DefaultTableModel) this.ql.get_table().getModel();
+            DefaultTableModel model = (DefaultTableModel) QuanLyNVForm.getTable().getModel();
             model.setValueAt(this.txtMaNV.getText(), selecrow, 0);
             model.setValueAt(this.txtHoTen.getText(), selecrow, 1);
             model.setValueAt(this.txtNgaySinh.getText(), selecrow, 2);

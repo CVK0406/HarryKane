@@ -2,7 +2,9 @@ package QLDA.GUI;
 
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 
 public class QuanLyNVForm extends javax.swing.JFrame {
@@ -47,6 +49,13 @@ public class QuanLyNVForm extends javax.swing.JFrame {
     public void RemoveRow(int index) {
         DefaultTableModel model = (DefaultTableModel) tbQuanLyNV.getModel();
         model.removeRow(index);
+    }
+    
+    public void search(String str){
+        DefaultTableModel model = (DefaultTableModel)tbQuanLyNV.getModel();
+        TableRowSorter<DefaultTableModel> trs = new TableRowSorter<>(model);
+        tbQuanLyNV.setRowSorter(trs);
+        trs.setRowFilter(RowFilter.regexFilter(str));
     }
 
 
@@ -100,6 +109,11 @@ public class QuanLyNVForm extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tbQuanLyNV);
 
         txtTimKiem.setPlaceholder("Tìm kiếm");
+        txtTimKiem.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtTimKiemKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout roundJPanel1Layout = new javax.swing.GroupLayout(roundJPanel1);
         roundJPanel1.setLayout(roundJPanel1Layout);
@@ -219,6 +233,11 @@ public class QuanLyNVForm extends javax.swing.JFrame {
     private void formWindowGainedFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowGainedFocus
         
     }//GEN-LAST:event_formWindowGainedFocus
+
+    private void txtTimKiemKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimKiemKeyReleased
+        String searchString = txtTimKiem.getText();
+        search(searchString);
+    }//GEN-LAST:event_txtTimKiemKeyReleased
 
 
 
