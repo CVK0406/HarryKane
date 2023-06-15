@@ -322,17 +322,26 @@ public class ThemNVForm extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEmailActionPerformed
 
     private void btThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btThemActionPerformed
-        Object row[] = new Object[10];
+        if (txtMaNV.getText().equals("") || txtHoTen.getText().equals("") 
+                || txtNgaySinh.getText().equals("") || txtDiaChi.getText().equals("") 
+                || txtEmail.getText().equals("") || txtLuong.getText().equals("")
+                || txtViTri.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Có thông tin chưa được nhập. Xin hãy nhập đầy đủ thông tin", 
+                    "Thiếu thông tin", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            Object row[] = new Object[10];
         
-        row[0] = txtMaNV.getText();
-        row[1] = txtHoTen.getText();
-        row[2] = txtNgaySinh.getText();
-        row[3] = txtDiaChi.getText();
-        row[4] = txtEmail.getText();
-        row[5] = txtLuong.getText();
-        row[6] = txtViTri.getText();
-        
-        QuanLyNVForm.AddRowTable(row);
+            row[0] = txtMaNV.getText();
+            row[1] = txtHoTen.getText();
+            row[2] = txtNgaySinh.getText();
+            row[3] = txtDiaChi.getText();
+            row[4] = txtEmail.getText();
+            row[5] = txtLuong.getText();
+            row[6] = txtViTri.getText();
+
+            QuanLyNVForm.AddRowTable(row);
+            this.dispose();
+        }
     }//GEN-LAST:event_btThemActionPerformed
 
     private void btSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSuaActionPerformed

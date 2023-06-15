@@ -12,6 +12,7 @@ public class TrangChuForm extends javax.swing.JFrame {
     private NhapBaoCaoForm nbc = new NhapBaoCaoForm();
     private HienThongBaoForm htb = new HienThongBaoForm();
     private ChamCongForm cc = new ChamCongForm();
+    private HopDongForm hd = new HopDongForm();
 
     public TrangChuForm() {
         initComponents();
@@ -63,6 +64,11 @@ public class TrangChuForm extends javax.swing.JFrame {
 
         btHopDong.setText("Hợp đồng");
         btHopDong.setRadius(20);
+        btHopDong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btHopDongActionPerformed(evt);
+            }
+        });
 
         btChamCong.setText("Chấm công");
         btChamCong.setRadius(20);
@@ -267,6 +273,10 @@ public class TrangChuForm extends javax.swing.JFrame {
     private void btChamCongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btChamCongActionPerformed
         showWindow(cc);
     }//GEN-LAST:event_btChamCongActionPerformed
+
+    private void btHopDongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHopDongActionPerformed
+        showWindow(hd);
+    }//GEN-LAST:event_btHopDongActionPerformed
 
 
 

@@ -239,19 +239,15 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowGainedFocus
 
     private void btDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDangNhapActionPerformed
-//        if(txtTenDN.getText().equals("abc") && 
-//                txtMatKhau.getText().equals("123")) {
-//            tc = new TrangChuForm();
-//            tc.setVisible(true);
-//            this.dispose();
-//        } else {
-//            JOptionPane.showMessageDialog(null, "Thông tin đăng nhập không đúng. Xin hãy nhập lại!",
-//                "Đăng nhập", JOptionPane.INFORMATION_MESSAGE);
-//        }
-
+        if(txtTenDN.getText().equals("HarryKane") && 
+                txtMatKhau.getText().equals("123456")) {
             tc = new TrangChuForm();
             tc.setVisible(true);
             this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Thông tin đăng nhập không đúng. Xin hãy nhập lại!",
+                "Đăng nhập", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btDangNhapActionPerformed
 
     private void txtTenDNFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTenDNFocusGained

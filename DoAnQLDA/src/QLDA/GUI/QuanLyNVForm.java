@@ -29,7 +29,7 @@ public class QuanLyNVForm extends javax.swing.JFrame {
             "NV3", "Lê Anh Tuấn Dũng", "10/12/2003", "133 Đường Nguyễn Huệ, TP. Hải Phòng",
             "mno@gmail.com", "700$", "Nhân viên phục vụ"
         });
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             AddRowTable(new Object[]{
             "NV1", "Lê Thuận Hiếu", "03/06/2003", "133 Đường Trần Hưng đạo, TP. Long Xuyen",
             "abc@gmail.com", "2000$", "Quản lý"
@@ -55,7 +55,9 @@ public class QuanLyNVForm extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel)tbQuanLyNV.getModel();
         TableRowSorter<DefaultTableModel> trs = new TableRowSorter<>(model);
         tbQuanLyNV.setRowSorter(trs);
-        trs.setRowFilter(RowFilter.regexFilter(str));
+        
+        String lowercaseSearchString = str.toLowerCase();
+        trs.setRowFilter(RowFilter.regexFilter("(?i)" + lowercaseSearchString));
     }
 
 

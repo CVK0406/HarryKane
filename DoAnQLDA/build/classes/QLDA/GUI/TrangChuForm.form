@@ -129,6 +129,9 @@
             <Property name="text" type="java.lang.String" value="H&#x1ee3;p &#x111;&#x1ed3;ng"/>
             <Property name="radius" type="int" value="20"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btHopDongActionPerformed"/>
+          </Events>
         </Component>
         <Component class="QLDA.SWING.RoundJButton" name="btChamCong">
           <Properties>

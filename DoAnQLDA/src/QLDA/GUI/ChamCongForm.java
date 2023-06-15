@@ -14,6 +14,7 @@ public class ChamCongForm extends javax.swing.JFrame {
         DefaultTableModel m = (DefaultTableModel) tbChamCong.getModel();
         Date now = new Date();
         dcChamCong.setDate(now);
+        dcChamCong.setDateFormatString("dd-MM-yyyy    HH:mm:ss");
         
         m.addRow(new Object[]{ 1,"2023-06-05    07:30:10" });
         m.addRow(new Object[]{ 2,"2023-06-06    07:20:30" });
