@@ -13,12 +13,14 @@ public class TrangChuNVForm extends javax.swing.JFrame {
     private HopDongNV hopdong;
     private HienThongBaoForm htb;
     private ChamCongNV chamcong;
+    private ChamCongFormNV chamcongNV;
 
     public TrangChuNVForm() {
         ql = new QuanLyNVForm();
         initComponents();
         hs = new HoSoNVForm();
         hopdong = new HopDongNV();
+        chamcongNV = new ChamCongFormNV();
         showWindow(hs);
         chamcong = new ChamCongNV();
     }
@@ -241,7 +243,7 @@ public class TrangChuNVForm extends javax.swing.JFrame {
 
     private void btChamCongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btChamCongActionPerformed
         // TODO add your handling code here:
-        showWindow(chamcong);
+        showWindow(chamcongNV);
     }//GEN-LAST:event_btChamCongActionPerformed
 
     private void btHopDongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHopDongActionPerformed
