@@ -30,11 +30,11 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         lbQuenMK = new javax.swing.JLabel();
         lbLogo = new javax.swing.JLabel();
-        roundJPanel1 = new QLDA.SWING.RoundJPanel();
+        roundJPanel1 = new Customs.RoundJPanel();
         txtTenDN = new javax.swing.JTextField();
-        roundJPanel2 = new QLDA.SWING.RoundJPanel();
+        roundJPanel2 = new Customs.RoundJPanel();
         txtMatKhau = new javax.swing.JPasswordField();
-        btDangNhap = new QLDA.SWING.RoundJButton();
+        btDangNhap = new Customs.RoundJButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowFocusListener(new java.awt.event.WindowFocusListener() {
@@ -210,7 +210,7 @@ public class LoginForm extends javax.swing.JFrame {
         if(txtTenDN.getText().equals("NV1") && 
                 txtMatKhau.getText().equals("123456")) {
             JOptionPane.showMessageDialog(this, "Đăng nhập thành công!", "Thông báo", JOptionPane.PLAIN_MESSAGE);
-                        TrangChuNV addframe  = new TrangChuNV();
+                        TrangChuNVForm addframe  = new TrangChuNVForm();
                         addframe.main(null);  
                         this.dispose();
         } else {
@@ -259,13 +259,13 @@ public class LoginForm extends javax.swing.JFrame {
         new LoginForm().setVisible(true);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private QLDA.SWING.RoundJButton btDangNhap;
+    private Customs.RoundJButton btDangNhap;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbLogo;
     private javax.swing.JLabel lbQuenMK;
-    private QLDA.SWING.RoundJPanel roundJPanel1;
-    private QLDA.SWING.RoundJPanel roundJPanel2;
+    private Customs.RoundJPanel roundJPanel1;
+    private Customs.RoundJPanel roundJPanel2;
     private javax.swing.JPasswordField txtMatKhau;
     private javax.swing.JTextField txtTenDN;
     // End of variables declaration//GEN-END:variables

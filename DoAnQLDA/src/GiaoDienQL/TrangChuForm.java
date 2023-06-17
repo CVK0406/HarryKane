@@ -1,26 +1,23 @@
-package GiaoDienNV;
+package GiaoDienQL;
 
-import GiaoDienQL.HopDongForm;
-import GiaoDienQL.QuanLyNVForm;
-import GiaoDienQL.HienThongBaoForm;
 import java.awt.Color;
 import javax.swing.*;
 
 
-public class TrangChuNVForm extends javax.swing.JFrame {
+public class TrangChuForm extends javax.swing.JFrame {
     
     private LoginForm lg;
-    private HoSoNVForm hs;
-    private QuanLyNVForm ql;
-    private HopDongForm hopdong;
-    private HienThongBaoForm htb;
-    private ChamCongFormNV ccnv;
+    private HoSoForm hs;
+    private QuanLyNVForm ql = new QuanLyNVForm();
+    private NhapBaoCaoForm nbc = new NhapBaoCaoForm();
+    private HienThongBaoForm htb = new HienThongBaoForm();
+    private ChamCongForm cc = new ChamCongForm();
+    private HopDongForm hd = new HopDongForm();
 
-    public TrangChuNVForm() {
+    public TrangChuForm() {
         initComponents();
-        hs = new HoSoNVForm();
+        hs = new HoSoForm();
         showWindow(hs);
-        
     }
     
     private void showWindow(JFrame v) {
@@ -39,12 +36,14 @@ public class TrangChuNVForm extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btHoSo = new Customs.RoundJButton();
         btHopDong = new Customs.RoundJButton();
-        btChamCong = new Customs.RoundJButton();
+        btQuanLyNV = new Customs.RoundJButton();
         lbDangXuat = new javax.swing.JLabel();
         lbLogout = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         lbThongBao = new javax.swing.JLabel();
         tbThongBaoSN = new javax.swing.JLabel();
+        customAvatar1 = new Customs.CustomAvatar();
+        jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -70,11 +69,11 @@ public class TrangChuNVForm extends javax.swing.JFrame {
             }
         });
 
-        btChamCong.setText("Chấm công");
-        btChamCong.setRadius(20);
-        btChamCong.addActionListener(new java.awt.event.ActionListener() {
+        btQuanLyNV.setText("Quản lý NV");
+        btQuanLyNV.setRadius(20);
+        btQuanLyNV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btChamCongActionPerformed(evt);
+                btQuanLyNVActionPerformed(evt);
             }
         });
 
@@ -107,7 +106,7 @@ public class TrangChuNVForm extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btHoSo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btHopDong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btChamCong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(btQuanLyNV, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -130,8 +129,8 @@ public class TrangChuNVForm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btHopDong, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btChamCong, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 192, Short.MAX_VALUE)
+                .addComponent(btQuanLyNV, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(lbDangXuat, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -156,16 +155,26 @@ public class TrangChuNVForm extends javax.swing.JFrame {
             }
         });
 
+        customAvatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GiaoDienQL/avatar-1.jpg"))); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("<html>Lê Thuận<br/>Hiếu</html>");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(711, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbThongBao, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(tbThongBaoSN, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(258, 258, 258))
+                .addGap(40, 40, 40)
+                .addComponent(customAvatar1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,6 +184,12 @@ public class TrangChuNVForm extends javax.swing.JFrame {
                     .addComponent(lbThongBao, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tbThongBaoSN, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(26, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(customAvatar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
+                .addGap(14, 14, 14))
         );
 
         jPanel3.setBackground(new java.awt.Color(39, 55, 77));
@@ -183,11 +198,11 @@ public class TrangChuNVForm extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1057, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 620, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -216,6 +231,7 @@ public class TrangChuNVForm extends javax.swing.JFrame {
 
     private void btHoSoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHoSoActionPerformed
         btHoSo.setBackground(new Color(221, 230, 237));
+        hs = new HoSoForm();
         showWindow(hs);
     }//GEN-LAST:event_btHoSoActionPerformed
 
@@ -229,37 +245,32 @@ public class TrangChuNVForm extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_lbDangXuatMousePressed
 
+    private void btQuanLyNVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btQuanLyNVActionPerformed
+        btQuanLyNV.setBackground(new Color(221, 230, 237));
+        showWindow(ql);
+    }//GEN-LAST:event_btQuanLyNVActionPerformed
+
     private void lbThongBaoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbThongBaoMousePressed
-        //nbc = new NhapBaoCaoForm();
-        //nbc.setVisible(true);
+        nbc.setVisible(true);
     }//GEN-LAST:event_lbThongBaoMousePressed
 
     private void tbThongBaoSNMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbThongBaoSNMousePressed
-//        htb = new HienThongBaoForm();
-//        htb.setVisible(true);
+        htb.setVisible(true);
     }//GEN-LAST:event_tbThongBaoSNMousePressed
 
-    private void btChamCongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btChamCongActionPerformed
-        // TODO add your handling code here:
-        ccnv = new ChamCongFormNV();
-        showWindow(ccnv);
-    }//GEN-LAST:event_btChamCongActionPerformed
-
     private void btHopDongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHopDongActionPerformed
-        // TODO add your handling code here:
-        hopdong = new HopDongForm();
-        showWindow(hopdong);
+        showWindow(hd);
     }//GEN-LAST:event_btHopDongActionPerformed
 
-    public static void main(String[] args) {
-        new TrangChuNVForm().setVisible(true);
-    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private Customs.RoundJButton btChamCong;
     private Customs.RoundJButton btHoSo;
     private Customs.RoundJButton btHopDong;
+    private Customs.RoundJButton btQuanLyNV;
+    private Customs.CustomAvatar customAvatar1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

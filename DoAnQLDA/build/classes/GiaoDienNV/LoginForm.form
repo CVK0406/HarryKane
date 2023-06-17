@@ -126,7 +126,7 @@
             <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="lbLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/images/logo.png&quot;)));"/>
           </AuxValues>
         </Component>
-        <Container class="QLDA.SWING.RoundJPanel" name="roundJPanel1">
+        <Container class="Customs.RoundJPanel" name="roundJPanel1">
 
           <Layout>
             <DimensionLayout dim="0">
@@ -176,7 +176,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="QLDA.SWING.RoundJPanel" name="roundJPanel2">
+        <Container class="Customs.RoundJPanel" name="roundJPanel2">
 
           <Layout>
             <DimensionLayout dim="0">
@@ -226,7 +226,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="QLDA.SWING.RoundJButton" name="btDangNhap">
+        <Component class="Customs.RoundJButton" name="btDangNhap">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#x110;&#x103;ng nh&#x1ead;p"/>
             <Property name="radius" type="int" value="20"/>

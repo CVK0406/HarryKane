@@ -1,7 +1,6 @@
 package Main;
 
-//import QLDA.GUI.LoginForm;
-import GiaoDienNV.LoginForm;
+import GiaoDienQL.LoginForm;
 
 
 public class Main {

@@ -1,10 +1,10 @@
-package GiaoDienNV;
+package GiaoDienQL;
 
 
-public class HoSoNVForm extends javax.swing.JFrame {
+public class HoSoForm extends javax.swing.JFrame {
 
 
-    public HoSoNVForm() {
+    public HoSoForm() {
         initComponents();
         
     }
@@ -35,7 +35,7 @@ public class HoSoNVForm extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(39, 55, 77));
 
-        customAvatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QLDA/GUI/avatar-1.jpg"))); // NOI18N
+        customAvatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GiaoDienQL/avatar-1.jpg"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -47,11 +47,11 @@ public class HoSoNVForm extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Lê Anh Tuấn Dũng");
+        jLabel4.setText("Lê Thuận Hiếu");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("10/05/2003");
+        jLabel5.setText("03/06/2003");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(221, 230, 237));
@@ -71,7 +71,7 @@ public class HoSoNVForm extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("latdung@gmail.com");
+        jLabel10.setText("abc@gmail.com");
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(221, 230, 237));
@@ -79,7 +79,7 @@ public class HoSoNVForm extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("0345861257");
+        jLabel12.setText("0123456789");
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(221, 230, 237));
@@ -87,7 +87,7 @@ public class HoSoNVForm extends javax.swing.JFrame {
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("Nhân viên");
+        jLabel14.setText("Quản lý");
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(221, 230, 237));
@@ -120,7 +120,7 @@ public class HoSoNVForm extends javax.swing.JFrame {
                             .addComponent(jLabel12)
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10))))
-                .addContainerGap(179, Short.MAX_VALUE))
+                .addContainerGap(211, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

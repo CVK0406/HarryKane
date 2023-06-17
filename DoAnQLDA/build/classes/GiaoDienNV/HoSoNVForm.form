@@ -137,7 +137,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="QLDA.SWING.CustomAvatar" name="customAvatar1">
+        <Container class="Customs.CustomAvatar" name="customAvatar1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/QLDA/GUI/avatar-1.jpg"/>

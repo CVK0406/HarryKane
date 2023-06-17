@@ -29,8 +29,8 @@ public class ChamCongFormNV extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tbChamCong = new QLDA.SWING.CustomTable();
-        btChamCong = new QLDA.SWING.RoundJButton();
+        tbChamCong = new Customs.CustomTable();
+        btChamCong = new Customs.RoundJButton();
         dcChamCong = new com.toedter.calendar.JDateChooser();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -202,7 +202,7 @@ public class ChamCongFormNV extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private QLDA.SWING.RoundJButton btChamCong;
+    private Customs.RoundJButton btChamCong;
     private com.toedter.calendar.JDateChooser dcChamCong;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -211,6 +211,6 @@ public class ChamCongFormNV extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private QLDA.SWING.CustomTable tbChamCong;
+    private Customs.CustomTable tbChamCong;
     // End of variables declaration//GEN-END:variables
 }
