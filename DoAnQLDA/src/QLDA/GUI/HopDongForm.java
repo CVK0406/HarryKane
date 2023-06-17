@@ -10,9 +10,6 @@ import java.io.FileOutputStream;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
-import javax.swing.RowFilter;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableRowSorter;
 
 
 public class HopDongForm extends javax.swing.JFrame {
@@ -36,7 +33,7 @@ public class HopDongForm extends javax.swing.JFrame {
                 + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chức vụ: Quản lý" + "<br/>";
         
         hd += "<h2>BÊN NGƯỜI LAO ĐỘNG</h2>";
-        hd += "Ông/Bà: Lê Minh Khôi<br/>CCCD: 0123456789<br/>Điện thoại: 0123456789<br/>"
+        hd += "Ông/Bà: Lê Anh Tuấn Dũng<br/>CCCD: 0123456789<br/>Điện thoại: 0123456789<br/>"
                 + "Số tài khoản: 0123456789&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
                 + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
                 + "Ngân hàng: VietinBank<br/>Hai bên cùng thỏa thuận ký hợp đồng với những nội dung sau:";

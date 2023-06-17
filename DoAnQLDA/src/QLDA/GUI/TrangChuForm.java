@@ -36,7 +36,6 @@ public class TrangChuForm extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btHoSo = new QLDA.SWING.RoundJButton();
         btHopDong = new QLDA.SWING.RoundJButton();
-        btChamCong = new QLDA.SWING.RoundJButton();
         btQuanLyNV = new QLDA.SWING.RoundJButton();
         lbDangXuat = new javax.swing.JLabel();
         lbLogout = new javax.swing.JLabel();
@@ -67,14 +66,6 @@ public class TrangChuForm extends javax.swing.JFrame {
         btHopDong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btHopDongActionPerformed(evt);
-            }
-        });
-
-        btChamCong.setText("Chấm công");
-        btChamCong.setRadius(20);
-        btChamCong.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btChamCongActionPerformed(evt);
             }
         });
 
@@ -115,7 +106,6 @@ public class TrangChuForm extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btHoSo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btHopDong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btChamCong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btQuanLyNV, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(38, 38, 38)
@@ -139,10 +129,8 @@ public class TrangChuForm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btHopDong, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btChamCong, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addComponent(btQuanLyNV, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(lbDangXuat, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -270,10 +258,6 @@ public class TrangChuForm extends javax.swing.JFrame {
         htb.setVisible(true);
     }//GEN-LAST:event_tbThongBaoSNMousePressed
 
-    private void btChamCongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btChamCongActionPerformed
-        showWindow(cc);
-    }//GEN-LAST:event_btChamCongActionPerformed
-
     private void btHopDongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHopDongActionPerformed
         showWindow(hd);
     }//GEN-LAST:event_btHopDongActionPerformed
@@ -281,7 +265,6 @@ public class TrangChuForm extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private QLDA.SWING.RoundJButton btChamCong;
     private QLDA.SWING.RoundJButton btHoSo;
     private QLDA.SWING.RoundJButton btHopDong;
     private QLDA.SWING.RoundJButton btQuanLyNV;

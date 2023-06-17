@@ -62,7 +62,6 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="btHoSo" max="32767" attributes="0"/>
                               <Component id="btHopDong" alignment="0" max="32767" attributes="0"/>
-                              <Component id="btChamCong" alignment="0" max="32767" attributes="0"/>
                               <Component id="btQuanLyNV" alignment="1" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -94,10 +93,8 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btHopDong" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btChamCong" min="-2" pref="50" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btQuanLyNV" min="-2" pref="50" max="-2" attributes="0"/>
-                  <EmptySpace pref="124" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="lbLogout" min="-2" pref="53" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                   <Component id="lbDangXuat" min="-2" pref="30" max="-2" attributes="0"/>
@@ -131,15 +128,6 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btHopDongActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="QLDA.SWING.RoundJButton" name="btChamCong">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Ch&#x1ea5;m c&#xf4;ng"/>
-            <Property name="radius" type="int" value="20"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btChamCongActionPerformed"/>
           </Events>
         </Component>
         <Component class="QLDA.SWING.RoundJButton" name="btQuanLyNV">

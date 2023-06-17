@@ -144,9 +144,11 @@ public class NhapBaoCaoForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btHuyActionPerformed
 
     private void btXacNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btXacNhanActionPerformed
-        HienThongBaoForm.txtHienTB.setText(txtNhapTB.getText());
-        txtNhapTB.setText("");
-        this.dispose();
+        if (!txtNhapTB.getText().equals("")) {
+            HienThongBaoForm.txtHienTB.setText(txtNhapTB.getText());
+            txtNhapTB.setText("");
+            this.dispose();
+        }
     }//GEN-LAST:event_btXacNhanActionPerformed
 
 

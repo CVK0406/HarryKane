@@ -64,6 +64,7 @@ public class LoginForm extends javax.swing.JFrame {
         lbLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         txtTenDN.setOpaque(false);
+        txtTenDN.setBackground(new java.awt.Color(157, 178, 191));
         txtTenDN.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         txtTenDN.setForeground(new java.awt.Color(82, 109, 130, 150));
         txtTenDN.setText("Tên đăng nhập");
@@ -100,6 +101,7 @@ public class LoginForm extends javax.swing.JFrame {
         );
 
         txtMatKhau.setOpaque(false);
+        txtMatKhau.setBackground(new java.awt.Color(157, 178, 191));
         txtMatKhau.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         txtMatKhau.setForeground(new java.awt.Color(82, 109, 130, 150));
         txtMatKhau.setText("Mật khẩu");
@@ -205,10 +207,9 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowGainedFocus
 
     private void btDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDangNhapActionPerformed
-        if(txtTenDN.getText().equals("Le Anh Duy") && 
-                txtMatKhau.getText().equals("12345678")) {
+        if(txtTenDN.getText().equals("NV1") && 
+                txtMatKhau.getText().equals("123456")) {
             JOptionPane.showMessageDialog(this, "Đăng nhập thành công!", "Thông báo", JOptionPane.PLAIN_MESSAGE);
-                        hide();
                         TrangChuNV addframe  = new TrangChuNV();
                         addframe.main(null);  
                         this.dispose();
