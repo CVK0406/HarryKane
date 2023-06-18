@@ -250,6 +250,7 @@ public class LoginForm extends javax.swing.JFrame {
                 txtMatKhau.getText().equals("123456")) {
             tcnv = new TrangChuNVForm();
             tcnv.setVisible(true);
+            this.dispose();
         } else {
             JOptionPane.showMessageDialog(null, "Thông tin đăng nhập không đúng. Xin hãy nhập lại!",
                 "Đăng nhập", JOptionPane.INFORMATION_MESSAGE);

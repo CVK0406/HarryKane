@@ -35,7 +35,7 @@ public class HoSoNVForm extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(39, 55, 77));
 
-        customAvatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QLDA/GUI/avatar-1.jpg"))); // NOI18N
+        customAvatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GiaoDienQL/avatar-1.jpg")));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
